@@ -1,10 +1,21 @@
-# CS2 Weather & Visual Particle Assets
+# CS2 Weather & Visual Assets
 
-Compiled `.vpcf_c` particle assets for Counter-Strike 2.
+Compiled CS2 assets used by the Fatality Lua script `custom_skybox.lua`.
 
-## custom_weather/
+## assets/v1/
 
-Partikül kaynakları Lua içine gömülü, script açılınca `csgo\particles\custom_weather\` altına kendisi yazar.
-Yoğunluk varyantları (`_light`, `_heavy`) emit oranı ofsetleri değiştirilerek üretildi (rain, snow, stars).
-`sparks.vpcf_c`: bullet_impact (kendi mermilerin, CP0 isabet noktası, CP1 renk).
-`killstars.vpcf_c`: player_death (kendi kill'in, CP0 konum, CP1 renk, CP2 süre, CP3 parça sayısı).
+Base64 text copies of the files the script downloads automatically on first use (no manual install needed):
+
+- `particles/custom_weather/*.vpcf_c.b64`: weather (rain, snow, stars with light/heavy variants), bullet impact sparks, kill effects.
+  The script writes them to `csgo\particles\custom_weather\`.
+- `hud/js/*.js.b64`, `hud/png/*.png.b64`: CS:GO style HUD scripts and plates.
+- `sounds/nsfw.mp3.b64`: sound played when an NSFW skybox is picked.
+
+The script pins every file by size and SHA-256 of the decoded bytes and never writes a file that does not match.
+Do not change files inside `v1/`; new versions go into a new folder (`v2/`) together with a new script build.
+
+Skyboxes are not hosted here: everybody installs their own.
+
+## custom_weather/, embedded/, emotes/
+
+Older raw copies kept for reference. The script no longer reads them.
